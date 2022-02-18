@@ -1,0 +1,11 @@
+<mat-card>
+    <mat-card-title>Dashboard</mat-card-title>
+    <form> 
+        <mat-form-field>
+            <input matInput [(ngModel)]="dataToSend" name="dataToSend" type="text" placeholder="dados">
+        </mat-form-field>
+    </form>
+    <button mat-raised-button (click)="sendData()" color="primary">
+        Enviar
+    </button>
+</mat-card>
