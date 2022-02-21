@@ -1,0 +1,11 @@
+p{
+    color: red;
+}
+::ng-deep.mat-tab-label, ::ng-deep.mat-tab-label-active{
+    min-width: 60px !important;
+    height: 20px !important;
+    padding: 0 10px !important;
+}
+::ng-deep .mat-tab-header-pagination, .mat-tab-header-pagination-controls-enabled {
+  display: none !important;
+}

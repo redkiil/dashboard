@@ -1,6 +1,7 @@
-import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewContainerRef } from '@angular/core'
 import { environment  } from '../../../environments/environment'
-import * as mapboxgl from 'mapbox-gl';
+import * as mapboxgl from 'mapbox-gl'
+import { PopupinfoComponent } from '../popupinfo/popupinfo.component'
 
 @Component({
   selector: 'app-map',
@@ -8,11 +9,12 @@ import * as mapboxgl from 'mapbox-gl';
   styleUrls: ['./map.component.css']
 })
 export class MapComponent implements OnInit, AfterViewInit {
+ 
   map: mapboxgl.Map | undefined;
   style = 'mapbox://styles/mapbox/streets-v11';
   lat = 37.75;
   lng = -122.41;
-  constructor(private _elementRef : ElementRef) { 
+  constructor(private _viewelementRef: ViewContainerRef,private _elementRef: ElementRef) { 
    
   }
 
@@ -25,20 +27,28 @@ export class MapComponent implements OnInit, AfterViewInit {
       center: [this.lng,this.lat]
     });
     // create the popup
-    const popup = new mapboxgl.Popup({ offset: 25 }).setHTML('<div id="vsf">vsf</div>');
-   
+    
+    
 
+    let brb = this._viewelementRef.createComponent(PopupinfoComponent)
+    brb.instance.data = 'opa opa3'
+    //console.log(brb.location.nativeElement);
+    //let tt = this._elementRef.nativeElement.querySelector('#asdo')
+    //console.log(tt);
+    const popup = new mapboxgl.Popup({ offset: 25 }).setDOMContent(brb.location.nativeElement).setMaxWidth("fit-content")
+
+ 
+   
     let ele = document.createElement("div");
-    ele.setAttribute('id','vtnc')
-    ele.innerHTML = 'aoskd'
-    let marker: mapboxgl.Marker = new mapboxgl.Marker(ele).setLngLat([this.lng, this.lat]).setPopup(popup).addTo(this.map);
+    ele.setAttribute('id','div_test3')
+    ele.innerHTML = 'OPA3'
+    let marker: mapboxgl.Marker = new mapboxgl.Marker(ele).setLngLat([this.lng, this.lat]).setPopup(popup).addTo(this.map)
     this.map.addControl(new mapboxgl.NavigationControl());
-    ele.addEventListener('click', e =>{
-      let brb = this._elementRef;
-      console.log(brb);
+    marker.on('click', function(e){
+      console.log(e);
     })
+
   }
   ngAfterViewInit() {
-    
   }
 }

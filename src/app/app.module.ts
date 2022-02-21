@@ -12,6 +12,7 @@ import { NavComponent } from './components/template/nav/nav.component';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCardModule } from '@angular/material/card';
+import { MatTabsModule } from '@angular/material/tabs'
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { HomeComponent } from './views/home/home.component';
@@ -22,6 +23,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MapComponent } from './views/map/map.component';
 import { PopupinfoComponent } from './views/popupinfo/popupinfo.component';
+import { StatusComponent } from './views/status/status.component';
+import { NgChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -33,7 +36,8 @@ import { PopupinfoComponent } from './views/popupinfo/popupinfo.component';
     HomeComponent,
     SettingsComponent,
     MapComponent,
-    PopupinfoComponent
+    PopupinfoComponent,
+    StatusComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +51,8 @@ import { PopupinfoComponent } from './views/popupinfo/popupinfo.component';
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTabsModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
