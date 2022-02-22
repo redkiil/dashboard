@@ -26,7 +26,6 @@ import { PopupinfoComponent } from './views/popupinfo/popupinfo.component';
 import { StatusComponent } from './views/status/status.component';
 import { NgChartsModule } from 'ng2-charts';
 
-
 @NgModule({
   declarations: [
     AppComponent,

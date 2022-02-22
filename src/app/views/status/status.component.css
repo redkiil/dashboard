@@ -1,0 +1,33 @@
+.tab-main{
+    height: 100%;
+    overflow: hidden;
+}
+.tabs-container{
+    margin: 10px;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, 23rem);  
+}
+.tabs{
+    text-align: center;
+}
+.tabs .title{
+    text-align: left;
+}
+.tabs span{
+    font-size: 24px;
+}
+.speed-svg{
+    fill: green;
+}
+.tabs img{
+    overflow: hidden;
+    max-width:100%;
+}
+.tabs .tabs-content{
+    width: 19rem;
+} 
+.info-card-content{
+    margin-top: 30px;
+    text-align: left;
+}
