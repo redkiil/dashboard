@@ -1,12 +1,12 @@
 .tab-main{
-    height: 100%;
-    overflow: hidden;
+    width: 80vw;
 }
 .tabs-container{
     margin: 10px;
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: repeat(auto-fit, 23rem);  
+    grid-template-columns: repeat(auto-fit, 350px);  
+    grid-template-rows: 350px;
 }
 .tabs{
     text-align: center;
@@ -15,17 +15,24 @@
     text-align: left;
 }
 .tabs span{
+    margin-top: -30px;
     font-size: 24px;
 }
 .speed-svg{
+    width: 80%;
+    height: 80%;
     fill: green;
 }
 .tabs img{
-    overflow: hidden;
-    max-width:100%;
+    
+    width: 80%;
+    height: 80%;
 }
 .tabs .tabs-content{
-    width: 19rem;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: block;
 } 
 .info-card-content{
     margin-top: 30px;

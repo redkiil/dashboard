@@ -22,7 +22,6 @@ export class StatusComponent implements OnInit {
     circumference: 180,
     rotation:-90,
     cutout: '120',
-    aspectRatio:1,
     responsive: true,
     events: [],
     hover:{
@@ -71,6 +70,7 @@ export class StatusComponent implements OnInit {
   }
   public historyChartOptions: any = {
     aspectRatio:3,
+    responsive:true,
     elements: {
       line: {
         
