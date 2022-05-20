@@ -1,7 +1,7 @@
 .sidenav{
     background-color: #3F51B5;
     width: 200px;
-    height: 100vh;
+
 }
 .sidenav a{
     color: #FFF;
@@ -12,8 +12,8 @@
 .content{
     padding: 15px;  
     background-color: white;
-    height: 90%;
+    height: 100%;
 }
 .container{
-    height:50rem;
+    height: 90vh;
 }

@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./popupinfo.component.css']
 })
 export class PopupinfoComponent implements OnInit {
-  @Input() data!: string;
+  @Input() data: any
   constructor() { }
 
   ngOnInit(): void {

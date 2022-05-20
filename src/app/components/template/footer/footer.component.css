@@ -1,8 +1,8 @@
 .footer{
-    position: fixed;
     bottom: 0;
     display: flex;
     justify-content: flex-end;
+    height: 5vh;
 }
 .footer > span {
     font-size: .9rem;

@@ -1,25 +1,25 @@
 <mat-card class="tab-main">
-    <mat-card-title class="title">Frota: 4455</mat-card-title>
-    <mat-card-subtitle>SETOR_INDAIA - TALHAO: 45</mat-card-subtitle>
+    <mat-card-title class="title">FROTA: 0000</mat-card-title>
+    <mat-card-subtitle>FAZ BOTUVERA - TALHAO: 45</mat-card-subtitle>
     <div class="tabs-container">
         <mat-card class="tabs">
             <mat-card-title class="title">Recolhimento</mat-card-title>
-            <div class="tabs-content">
-                <canvas baseChart [data]="speedChartData" [type]="speedChartType" [options]="speedChartOptions" ></canvas>
-                <span>100<br>M/h</span>
+            <div style="position: relative; height:70%; width:70%;margin: auto">
+                <canvas baseChart [data]="speedChartData" [type]="speedChartType" [options]="speedChartOptions"></canvas>
             </div>
+            <span>{{ speedtext }}<br>M/h</span>
         </mat-card>
         <mat-card class="tabs">
             <mat-card-title class="title">Pressão</mat-card-title>
-            <div class="tabs-content">
+            <div style="position: relative; height:70%; width:70%; margin: auto;">
                 <canvas id="pressao" baseChart [data]="psiChartData" [type]="psiChartType" [options]="psiChartOptions" ></canvas>
-                <span>{{ pressaotext }}<br>bar</span>
             </div>
+            <span>{{ pressaotext }}<br>bar</span>
         </mat-card>
         <mat-card class="tabs">
             <mat-card-title class="title">Fim de curso</mat-card-title>
             <div class="tabs-content">
-                <svg class="speed-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="default">
+                <svg class="speed-svg" [style.fill]="endcolor" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="default">
                     <g><path d="M943.5,21.8c-20.7-20.7-57.2-17.6-81.8,7L705.5,184.9l-14.3-14.3l-1.2-1.2c-16.8-16.8-47.4-21.3-68.5-10.1L394.9,280.1c-21.1,11.3-24.6,33.9-7.8,50.7l142,142c0.1,0.1,0.2,0.2,0.3,0.3c0.1,0.1,0.2,0.2,0.3,0.3l142,142c16.8,16.8,39.5,13.4,50.7-7.7l120.7-226.5c11.3-21.1,6.8-51.7-10-68.5l-1.2-1.2l-18.9-18.9l156.2-156.2c24.6-24.6,27.7-61.1,7-81.8L943.5,21.8z M332.8,389.1c-16.8-16.8-39.5-13.4-50.7,7.8L161.3,623.4c-11.3,21.1-6.8,51.7,10.1,68.5l1.2,1.2l14.3,14.3L30.7,863.7c-24.6,24.6-27.7,61.1-7,81.8l32.8,32.8c20.7,20.7,57.2,17.6,81.8-7l156.2-156.2l18.9,18.9l1.2,1.2c16.8,16.8,47.4,21.3,68.5,10l226.5-120.7c21.1-11.3,24.6-33.9,7.7-50.7l-142-142c-0.1-0.1-0.2-0.2-0.3-0.3c-0.1-0.1-0.2-0.2-0.3-0.3L332.8,389.1z"/></g>
                 </svg>
                 <span>Acoplado</span>
@@ -29,23 +29,23 @@
             <mat-card-title class="title">Operador</mat-card-title>
             <div class="tabs-content">
                 <img src="assets/img/avatar.jpg">
-                <span>Jose Ferreira - 8484</span>
+                <span>Colaborador José - 000000</span>
             </div>
         </mat-card>
         <mat-card class="tabs">
             <mat-card-title class="title">Informações</mat-card-title>
             <div class="tabs-content info-card-content">
-                <span>SETOR_INDAIA</span><br>
+                <span>FAZ FANTASIA</span><br>
                 <span>Talhão: <strong>44</strong></span><br>
-                <span>Operador: <strong>Jose Ferreira</strong></span><br>
-                <span>Matricula: <strong>8484</strong></span><br>
-                <span>Frente: <strong>01</strong></span><br>
-                <span>Horario: <strong>21/02/2021 14:38</strong></span><br>
-                <span>Pressão: <strong>10 bar</strong></span><br>
+                <span>Operador: <strong>Colaborador José</strong></span><br>
+                <span>Matricula: <strong>000000</strong></span><br>
+                <span>Frente: <strong>00</strong></span><br>
+                <span>Horario: <strong>{{ time | date: 'dd/MM/YY hh:mm:ss' }}</strong></span><br>
+                <span>Pressão: <strong>{{ pressaotext }} bar</strong></span><br>
                 <span>Ultima Falha: <strong>Sensor do rolete disc</strong></span><br>
             </div>
         </mat-card>
-        <mat-card class="tabs">
+        <mat-card class="tabs tabs-history">
             <mat-card-title class="title">Historico</mat-card-title>
             <div class="tabs-content">
                 <canvas baseChart [data]="historyChartData" [type]="historyChartType" [options]="historyChartOptions" ></canvas>
